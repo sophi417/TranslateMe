@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import Combine
 import FirebaseFirestore
 
 @MainActor
@@ -98,7 +99,7 @@ class TranslationManager: ObservableObject {
             }
     }
 
-    // deletes every doc in the collection
+    // dletes every doc in the collection
     func clearHistory() {
         db.collection("translations").getDocuments { snapshot, error in
             guard let docs = snapshot?.documents else { return }
